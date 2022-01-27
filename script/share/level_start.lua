@@ -72,15 +72,17 @@ end
 
 
 -- -----------------------------------------------------------------
-function script_update()
+function script_update(tick,speedup)
     -- this function is called after every game cycle
-    animateUnits()
-    borderShout()
+    if tick - math.floor(tick/speedup)*speedup == 0 then
+        animateUnits()
+        borderShout()
 
-    updateModels()
-    prog_update()
+        updateModels()
+        prog_update()
 
-    stdBubles()
-    stdBoreJoke()
-    stdBlackJoke()
+        stdBubles()
+        stdBoreJoke()
+        stdBlackJoke()
+    end
 end

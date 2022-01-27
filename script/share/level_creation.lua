@@ -174,11 +174,29 @@ function addHeadAnim(model, directory, anim, phase)
 end
 local function addBodyAnim(model, directory, anim, phase)
     local picture_00 = directory.."/left/body_"..phase..".png"
-    for index, filename in ipairs(imgList(picture_00)) do
-        model:addAnim(anim, filename)
-        model:addAnim(anim,
-                string.gsub(filename, "/left/body_", "/right/body_"),
-                LOOK_RIGHT)
+    if anim == "turn_nope" then
+        for index, filename in ipairs(imgList(picture_00)) do
+            model:addAnim(anim, filename)
+            model:addAnim(anim, filename)
+            model:addAnim(anim, filename)
+
+            model:addAnim(anim,
+                    string.gsub(filename, "/left/body_", "/right/body_"),
+                    LOOK_RIGHT)
+            model:addAnim(anim,
+                    string.gsub(filename, "/left/body_", "/right/body_"),
+                    LOOK_RIGHT)
+            model:addAnim(anim,
+                    string.gsub(filename, "/left/body_", "/right/body_"),
+                    LOOK_RIGHT)
+        end
+    else
+        for index, filename in ipairs(imgList(picture_00)) do
+            model:addAnim(anim, filename)
+            model:addAnim(anim,
+                    string.gsub(filename, "/left/body_", "/right/body_"),
+                    LOOK_RIGHT)
+        end
     end
 end
 local function addBodyAnimBackward(model, directory, anim, phase)
