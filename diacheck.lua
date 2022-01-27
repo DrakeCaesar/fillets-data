@@ -1,6 +1,6 @@
 #!/usr/bin/env lua
 
-if arg[1] == nil then
+if arg.n ~= 1 then
     print(string.format("Usage: %s path/to/dialogs.lua",
         arg[0]))
     print('Checks dialogs.lua for translation consistency.')

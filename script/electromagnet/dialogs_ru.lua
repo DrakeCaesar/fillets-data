@@ -42,7 +42,6 @@ dialogStr("В конце концов, он должен быть связан �
 dialogId("rand-0-5", "font_big", "That could be.")
 dialogStr("Может быть и так.")
 
-
 dialogId("rand-1-0", "font_small", "Perhaps we have to find out what the point is of all these magnets in this level?")
 dialogStr("Может быть, нам нужно понять, зачем нужны все эти магниты на этом уровне?")
 

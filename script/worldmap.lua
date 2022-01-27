@@ -22,6 +22,9 @@ branch_addNode("key", "keys", "script/keys/init.lua", 567, 297)
 branch_addNode("keys", "linux", "script/linux/init.lua", 574, 267,
         false, "script/linux/demo_poster.lua")
 
+-- Branch of Greatness
+branch_addNode("keys", "redhat", "script/redhat/init.lua", 580, 330)
+
 -- Ship Wrecks
 branch_addNode("library", "submarine", "script/submarine/init.lua", 340, 228, true)
 branch_addNode("submarine", "party1", "script/party1/init.lua", 381, 224)
