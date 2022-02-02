@@ -31,20 +31,20 @@ local function prog_init()
                     if room.komentovaly > 1 and random(100) < 50 then
                         switch(random(4)){
                             [0] = function()
-                                room.qnevsimla = math.modf(room.qnevsimla + 1, 4)
+                                room.qnevsimla = math.fmod(room.qnevsimla + 1, 4)
                                 if room.qnevsimla == 1 then
                                     addv(8, "vit-v-nevsimla")
                                 end
                             end,
                             [1] = function()
-                                room.qautomat = math.modf(room.qautomat + 1, 6)
+                                room.qautomat = math.fmod(room.qautomat + 1, 6)
                                 if room.qautomat == 1 then
                                     addv(8, "vit-v-automat")
                                     addm(9, "vit-m-nebo")
                                 end
                             end,
                             [2] = function()
-                                room.qnezkusime = math.modf(room.qnezkusime + 1, 8)
+                                room.qnezkusime = math.fmod(room.qnezkusime + 1, 8)
                                 if room.qnezkusime == 2 then
                                     addm(8, "vit-m-nezkusime")
                                     if room.komentovaly < 15 then
@@ -53,7 +53,7 @@ local function prog_init()
                                 end
                             end,
                             [3] = function()
-                                room.qhlava = math.modf(room.qhlava + 1, 2)
+                                room.qhlava = math.fmod(room.qhlava + 1, 2)
                                 if room.qautomat == 0 then
                                     switch(random(2)){
                                         [0] = function()
@@ -366,7 +366,7 @@ local function prog_init()
                 [0] = function()
                 end,
                 [1] = function()
-                    if math.modf(game_getCycles(), 2) == 0 then
+                    if math.fmod(game_getCycles(), 2) == 0 then
                         if vladce:isTalking() then
                             pom1 = random(3)
                         else
@@ -611,7 +611,7 @@ local function prog_init()
                     if room.globpole[pom1] < 3 then
                         room.globpole[pom1] = 3
                     end
-                    room.globpole[pom1] = math.modf(room.globpole[pom1] - 2, 4) + 3
+                    room.globpole[pom1] = math.fmod(room.globpole[pom1] - 2, 4) + 3
                     switch(room.globpole[pom1]){
                         [3] = function()
                             crabs[pom1].afaze = 0

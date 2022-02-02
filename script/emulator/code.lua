@@ -146,7 +146,7 @@ local function prog_init()
                         knightik.poc = 300 - knightik.stav * 50
                     else
                         knightik.poc = knightik.poc - 1
-                        if math.modf(knightik.poc, 3) == 2 then
+                        if math.fmod(knightik.poc, 3) == 2 then
                             knightik.afaze = random(4) + 2
                         end
                     end

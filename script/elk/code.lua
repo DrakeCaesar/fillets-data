@@ -191,7 +191,7 @@ local function prog_init()
         loos.cinnost = 0
 
         return function()
-            pomb1 = math.modf(game_getCycles(), 3) == 0
+            pomb1 = math.fmod(game_getCycles(), 3) == 0
             switch(loos.cinnost){
                 [0] = function()
                     loos.afaze = 3

@@ -196,7 +196,7 @@ local function prog_init()
         notepad.napsano = 0
 
         return function()
-            notepad.afaze = notepad.napsano * 2 + math.floor(math.modf(game_getCycles(), 10) / 5)
+            notepad.afaze = notepad.napsano * 2 + math.floor(math.fmod(game_getCycles(), 10) / 5)
             notepad:updateAnim()
         end
     end

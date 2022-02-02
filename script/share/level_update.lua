@@ -35,8 +35,8 @@ local function animateHead(model)
         if "talking" == state or model_isTalking(TALK_INDEX_BOTH) then
             if not model.talk_phase then
                 model.talk_phase = random(3)
-            elseif math.modf(game_getCycles(), 2) == 0 then
-                model.talk_phase = math.modf(
+            elseif math.fmod(game_getCycles(), 2) == 0 then
+                model.talk_phase = math.fmod(
                     model.talk_phase + randint(1, 2), 3)
             end
         else

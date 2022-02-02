@@ -138,7 +138,7 @@ local function prog_init()
             else
                 room.pobliz = 0
             end
-            if math.modf(game_getCycles(), 3000) == 0 then
+            if math.fmod(game_getCycles(), 3000) == 0 then
                 room.rozhovor = 0
             end
         end
@@ -171,7 +171,7 @@ local function prog_init()
                     krab.spi = 1
                 end
             elseif krab:isTalking() then
-                krab.afaze = math.modf(game_getCycles(), 4) + 2
+                krab.afaze = math.fmod(game_getCycles(), 4) + 2
             elseif krab.dir == dir_down then
                 krab.afaze = random(9) + 1
             else
@@ -207,7 +207,7 @@ local function prog_init()
                 anim_table[27] = anim_table[26]
                 anim_table[28] = anim_table[26]
 
-                switch(math.modf(random(krab.spi), 100))(anim_table)
+                switch(math.fmod(random(krab.spi), 100))(anim_table)
             end
             if krab.spi > 0 then
                 krab.spi = krab.spi + 1

@@ -163,7 +163,7 @@ local function prog_init()
     local function prog_init_lebzna()
         return function()
             if odd(game_getCycles()) then
-                lebzna.afaze = math.modf(lebzna.afaze + 1, 4)
+                lebzna.afaze = math.fmod(lebzna.afaze + 1, 4)
                 lebzna:updateAnim()
             end
         end

@@ -18,7 +18,7 @@ function isReady(model)
 end
 
 function odd(number)
-    return math.modf(number, 2) == 1
+    return math.fmod(number, 2) == 1
 end
 
 function getRestartCount()

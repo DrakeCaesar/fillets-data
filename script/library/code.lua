@@ -113,7 +113,7 @@ local function prog_init()
     -- -------------------------------------------------------------
     local function prog_init_sklibak()
         return function()
-            if math.modf(game_getCycles(), 2) == 0 then
+            if math.fmod(game_getCycles(), 2) == 0 then
                 local anim_table = {
                     [0] = function() 
                         if random(100) < 5 then
