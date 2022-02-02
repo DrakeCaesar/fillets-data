@@ -5,7 +5,9 @@ require("prog_goanim.lua")
 
 local function info(text, model)
     print(text.."  -----------------")
-    table.foreach(model, print)
+    for _,Key in pairs(model) do
+        print(Key)
+    end
 end
 
 math.randomseed(os.time())

@@ -196,7 +196,7 @@ local function prog_init()
         blbec.udivenej = 0
 
         return function()
-            if math.mod(game_getCycles(), 2) == 0 then
+            if math.modf(game_getCycles(), 2) == 0 then
                 switch(blbec.faze){
                     [0] = function()
                         blbec.faze = blbec.faze + 1

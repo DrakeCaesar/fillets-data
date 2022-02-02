@@ -7,7 +7,7 @@ local function wasUsedRecently(n)
     return isIn(n, usedJokes)
 end
 local function rememberUsed(n)
-    peek = math.mod(peek + 1, usedJokesCapacity)
+    peek = math.modf(peek + 1, usedJokesCapacity)
     usedJokes[peek] = n
 end
 

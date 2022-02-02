@@ -73,7 +73,7 @@ function unpickle_string(s)
   if type(s) ~= "string" then
     error("can't unpickle a "..type(s)..", only strings")
   end
-  local tables = loadstring("return "..s)()
+  local tables = load("return "..s)()
   return unpickle_table(tables)
 end
   
