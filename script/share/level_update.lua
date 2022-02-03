@@ -57,8 +57,6 @@ local function animateHead(model)
                 model:useSpecialAnim("head_pushing", 0)
             elseif random(100) < 6 then
                 model:useSpecialAnim("head_blink", 0)
-            elseif model.talk_phase == false then
-                model:useSpecialAnim("head_talking", 0)
             end
         end
     end
